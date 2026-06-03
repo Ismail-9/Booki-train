@@ -151,6 +151,17 @@ p {
   color: var(--white);
   background: var(--blue);
   font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover,
+.search-button:focus-visible {
+  background-color: #003c96;
+}
+
+.search-button:active {
+  transform: scale(0.98);
 }
 
 .search-button .fa-magnifying-glass {
@@ -572,3 +583,4 @@ p {
     font-size: 15px;
   }
 }
+

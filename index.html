@@ -3,230 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Booki - trouvez votre hébergement pour des vacances de rêve." />
-  <title>Booki - Hébergements et activités à Marseille</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="./styles.css" />
+
+  <title>Booki - Hébergements et activités</title>
+
+  <!-- Police Raleway comme dans le projet OpenClassrooms -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome pour les icônes -->
+  <script src="https://kit.fontawesome.com/d3e21d3794.js" crossorigin="anonymous"></script>
+
+  <!-- IMPORTANT : le nom doit être exactement styles.css -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="page-wrapper">
-    <header class="main-header">
-      <a href="#" class="logo" aria-label="Retour à l'accueil Booki">Booki</a>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="#" class="logo" aria-label="Accueil Booki">
+        <span>Booki</span>
+      </a>
 
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#hebergements" class="active">Hébergements</a>
-        <a href="#activites">Activités</a>
+        <a href="#hebergements" class="nav-link active">Hébergements</a>
+        <a href="#activites" class="nav-link">Activités</a>
       </nav>
     </header>
 
     <main>
-      <section class="search-section" aria-labelledby="main-title">
-        <h1 id="main-title">Trouvez votre hébergement pour des vacances de rêve</h1>
+      <!-- INTRO + RECHERCHE -->
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Trouvez votre hébergement pour des vacances de rêve</h1>
         <p>En plein centre-ville ou en pleine nature</p>
 
         <form class="search-form" action="#" method="get">
-          <span class="location-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
-          <label class="sr-only" for="city">Ville recherchée</label>
-          <input id="city" name="city" type="search" value="Marseille, France" />
-          <button class="search-button" type="submit">
+          <span class="search-location" aria-hidden="true">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+
+          <label for="city" class="sr-only">Ville recherchée</label>
+          <input
+            id="city"
+            name="city"
+            type="search"
+            value="Marseille, France"
+            aria-label="Rechercher une ville"
+          />
+
+          <button class="search-button" type="submit" aria-label="Rechercher">
             <span class="search-text">Rechercher</span>
-            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
           </button>
         </form>
 
-        <div class="filters" aria-label="Filtres disponibles">
+        <!-- FILTRES -->
+        <div class="filters" aria-label="Filtres de recherche">
           <h2>Filtres</h2>
-          <button type="button" class="filter-button"><i class="fa-solid fa-money-bill-wave"></i>Économique</button>
-          <button type="button" class="filter-button"><i class="fa-solid fa-person"></i>Familial</button>
-          <button type="button" class="filter-button"><i class="fa-solid fa-heart"></i>Romantique</button>
-          <button type="button" class="filter-button"><i class="fa-solid fa-fire"></i>Nos pépites</button>
+
+          <button class="filter-button" type="button">
+            <span class="filter-icon"><i class="fas fa-money-bill-wave"></i></span>
+            <span>Économique</span>
+          </button>
+
+          <button class="filter-button" type="button">
+            <span class="filter-icon"><i class="fas fa-child"></i></span>
+            <span>Familial</span>
+          </button>
+
+          <button class="filter-button" type="button">
+            <span class="filter-icon"><i class="fas fa-heart"></i></span>
+            <span>Romantique</span>
+          </button>
+
+          <button class="filter-button" type="button">
+            <span class="filter-icon"><i class="fas fa-fire"></i></span>
+            <span>Nos pépites</span>
+          </button>
         </div>
 
-        <p class="info-message">
-          <span aria-hidden="true"><i class="fa-solid fa-info"></i></span>
+        <p class="info-text">
+          <span class="info-icon" aria-hidden="true"><i class="fas fa-info"></i></span>
           Plus de 500 logements sont disponibles dans cette ville
         </p>
       </section>
 
-      <section class="accommodation-layout" aria-label="Hébergements et logements populaires à Marseille">
-        <section class="section-box accommodations" id="hebergements" aria-labelledby="accommodations-title">
-          <h2 id="accommodations-title">Hébergements à Marseille</h2>
+      <!-- HEBERGEMENTS + POPULAIRES -->
+      <section class="lodging-layout" id="hebergements" aria-label="Hébergements à Marseille">
 
-          <div class="accommodation-cards">
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre de l'auberge La Canebière" />
-                <div class="card-content">
-                  <h3>Auberge La Canebière</h3>
-                  <p>Nuit à partir de <strong>25€</strong></p>
-                  <p class="rating" aria-label="Note : 4 étoiles sur 5">★★★★<span>★</span></p>
-                </div>
-              </a>
-            </article>
+        <!-- HEBERGEMENTS -->
+        <section class="lodging-card lodging-main" aria-labelledby="lodging-title">
+          <h2 id="lodging-title">Hébergements à Marseille</h2>
 
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="Chambre de l'hôtel du Port" />
-                <div class="card-content">
-                  <h3>Hôtel du Port</h3>
-                  <p>Nuit à partir de <strong>52€</strong></p>
-                  <p class="rating" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
-                </div>
-              </a>
-            </article>
+          <div class="hotel-grid">
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chambre de l'Auberge La Canebière">
+              <div class="hotel-content">
+                <h3>Auberge La Canebière</h3>
+                <p>Nuit à partir de <strong>25€</strong></p>
+                <p class="stars" aria-label="4 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="Chambre de l'hôtel Les Mouettes" />
-                <div class="card-content">
-                  <h3>Hôtel Les Mouettes</h3>
-                  <p>Nuit à partir de <strong>76€</strong></p>
-                  <p class="rating" aria-label="Note : 4 étoiles sur 5">★★★★<span>★</span></p>
-                </div>
-              </a>
-            </article>
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="Chambre de l'Hôtel du Port">
+              <div class="hotel-content">
+                <h3>Hôtel du Port</h3>
+                <p>Nuit à partir de <strong>52€</strong></p>
+                <p class="stars" aria-label="5 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Chambre de l'hôtel de la mer" />
-                <div class="card-content">
-                  <h3>Hôtel de la mer</h3>
-                  <p>Nuit à partir de <strong>46€</strong></p>
-                  <p class="rating" aria-label="Note : 3 étoiles sur 5">★★★<span>★★</span></p>
-                </div>
-              </a>
-            </article>
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="Chambre de l'Hôtel Les Mouettes">
+              <div class="hotel-content">
+                <h3>Hôtel Les Mouettes</h3>
+                <p>Nuit à partir de <strong>76€</strong></p>
+                <p class="stars" aria-label="4 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="Chambre de l'auberge Le Panier" />
-                <div class="card-content">
-                  <h3>Auberge Le Panier</h3>
-                  <p>Nuit à partir de <strong>23€</strong></p>
-                  <p class="rating" aria-label="Note : 4 étoiles sur 5">★★★★<span>★</span></p>
-                </div>
-              </a>
-            </article>
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Chambre de l'Hôtel de la mer">
+              <div class="hotel-content">
+                <h3>Hôtel de la mer</h3>
+                <p>Nuit à partir de <strong>46€</strong></p>
+                <p class="stars" aria-label="3 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card accommodation-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Chambre de l'hôtel chez Amina" />
-                <div class="card-content">
-                  <h3>Hôtel chez Amina</h3>
-                  <p>Nuit à partir de <strong>96€</strong></p>
-                  <p class="rating" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
-                </div>
-              </a>
-            </article>
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="Chambre de l'Auberge Le Panier">
+              <div class="hotel-content">
+                <h3>Auberge Le Panier</h3>
+                <p>Nuit à partir de <strong>23€</strong></p>
+                <p class="stars" aria-label="4 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
+
+            <a href="#" class="hotel-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Chambre de l'Hôtel chez Amina">
+              <div class="hotel-content">
+                <h3>Hôtel chez Amina</h3>
+                <p>Nuit à partir de <strong>96€</strong></p>
+                <p class="stars" aria-label="5 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </p>
+              </div>
+            </a>
           </div>
 
-          <a class="show-more" href="#">Afficher plus</a>
+          <a href="#" class="show-more">Afficher plus</a>
         </section>
 
-        <aside class="section-box popular" aria-labelledby="popular-title">
-          <div class="popular-title-row">
+        <!-- POPULAIRES -->
+        <aside class="lodging-card popular" aria-labelledby="popular-title">
+          <div class="popular-title">
             <h2 id="popular-title">Les plus populaires</h2>
-            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
           </div>
 
-          <div class="popular-cards">
-            <article class="card popular-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Chambre de l'hôtel Le Soleil du Matin" />
-                <div class="popular-content">
-                  <div>
-                    <h3>Hôtel Le Soleil du Matin</h3>
-                    <p>Nuit à partir de <strong>128€</strong></p>
-                  </div>
-                  <p class="rating" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
+          <div class="popular-list">
+            <a href="#" class="popular-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Chambre de l'Hôtel Le Soleil du Matin">
+              <div class="popular-content">
+                <div>
+                  <h3>Hôtel Le Soleil du Matin</h3>
+                  <p>Nuit à partir de <strong>128€</strong></p>
                 </div>
-              </a>
-            </article>
+                <p class="stars" aria-label="5 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card popular-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Chambre d'hôtes Au cœur de l'eau" />
-                <div class="popular-content">
-                  <div>
-                    <h3>Chambres d’hôtes Au cœur de l’eau</h3>
-                    <p>Nuit à partir de <strong>71€</strong></p>
-                  </div>
-                  <p class="rating" aria-label="Note : 4 étoiles sur 5">★★★★<span>★</span></p>
+            <a href="#" class="popular-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Chambre d'hôtes Au cœur de l'eau">
+              <div class="popular-content">
+                <div>
+                  <h3>Chambres d’hôtes Au cœur de l’eau</h3>
+                  <p>Nuit à partir de <strong>71€</strong></p>
                 </div>
-              </a>
-            </article>
+                <p class="stars" aria-label="4 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
 
-            <article class="card popular-card">
-              <a href="#">
-                <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="Chambre de l'hôtel Bleu et Blanc" />
-                <div class="popular-content">
-                  <div>
-                    <h3>Hôtel Bleu et Blanc</h3>
-                    <p>Nuit à partir de <strong>68€</strong></p>
-                  </div>
-                  <p class="rating" aria-label="Note : 4 étoiles sur 5">★★★★<span>★</span></p>
+            <a href="#" class="popular-card">
+              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Chambre de l'Hôtel Bleu et Blanc">
+              <div class="popular-content">
+                <div>
+                  <h3>Hôtel Bleu et Blanc</h3>
+                  <p>Nuit à partir de <strong>68€</strong></p>
                 </div>
-              </a>
-            </article>
+                <p class="stars" aria-label="4 étoiles sur 5">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star empty"></i>
+                </p>
+              </div>
+            </a>
           </div>
         </aside>
       </section>
 
+      <!-- ACTIVITES -->
       <section class="activities" id="activites" aria-labelledby="activities-title">
         <h2 id="activities-title">Activités à Marseille</h2>
 
-        <div class="activity-cards">
-          <article class="card activity-card tall">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="Vue du Vieux-Port de Marseille" />
-              <h3>Vieux-Port</h3>
-            </a>
-          </article>
+        <div class="activity-grid">
+          <a href="#" class="activity-card activity-large">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="Vieux-Port de Marseille">
+            <h3>Vieux-Port</h3>
+          </a>
 
-          <article class="card activity-card medium">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="Fort de Pomègues" />
-              <h3>Fort de Pomègues</h3>
-            </a>
-          </article>
+          <a href="#" class="activity-card activity-medium">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="Fort de Pomègues">
+            <h3>Fort de Pomègues</h3>
+          </a>
 
-          <article class="card activity-card small">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Îles du Frioul" />
-              <h3>Îles du Frioul</h3>
-            </a>
-          </article>
+          <a href="#" class="activity-card activity-small">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Îles du Frioul">
+            <h3>Îles du Frioul</h3>
+          </a>
 
-          <article class="card activity-card tall">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="Parc national des Calanques" />
-              <h3>Parc national des Calanques</h3>
-            </a>
-          </article>
+          <a href="#" class="activity-card activity-large">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="Parc national des Calanques">
+            <h3>Parc national des Calanques</h3>
+          </a>
 
-          <article class="card activity-card small">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="Notre-Dame-de-la-Garde" />
-              <h3>Notre-Dame-de-la-Garde</h3>
-            </a>
-          </article>
+          <a href="#" class="activity-card activity-small">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="Notre-Dame-de-la-Garde">
+            <h3>Notre-Dame-de-la-Garde</h3>
+          </a>
 
-          <article class="card activity-card medium">
-            <a href="#">
-              <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/Master-branch/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="Parc Longchamp" />
-              <h3>Parc Longchamp</h3>
-            </a>
-          </article>
+          <a href="#" class="activity-card activity-medium">
+            <img src="https://raw.githubusercontent.com/Ismail-9/BERRAHOUANEIsmail_2_23062021/master/Images/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="Parc Longchamp">
+            <h3>Parc Longchamp</h3>
+          </a>
         </div>
       </section>
     </main>
   </div>
 
-  <footer class="main-footer">
-    <div class="footer-content">
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
       <section>
         <h2>À propos</h2>
         <ul>
